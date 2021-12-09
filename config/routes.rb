@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :services
+      device_scope :user do
+        post 'login', to: 'user_sessions#create', as: 'login'
+      end
+      put 'users/update', to: 'users#update'
+
     end
   end
 end
