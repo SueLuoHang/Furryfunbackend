@@ -1,4 +1,4 @@
-class Api::V1::ServicesController < Api::V1::BaseController
+class Api::V1::ServiceController < Api::V1::BaseController
   before_action :authenticate_user!, except: [:create], raise:false
   skip_before_action :verify_authenticity_token
 
