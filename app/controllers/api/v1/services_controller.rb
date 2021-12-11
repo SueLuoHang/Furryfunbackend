@@ -1,5 +1,8 @@
 class Api::V1::ServicesController < Api::V1::BaseController
   before_action :find_service, only: [:show, :destroy, :update, :edit]
+  skip_before_action :authenticate_user!, only: [:index], raise:false
+  skip_before_action :verify_authenticity_token
+
   def index
     @services = Service.all
   end
