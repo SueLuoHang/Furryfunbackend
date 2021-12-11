@@ -1,4 +1,4 @@
-class Api::V1::ServiceController < Api::V1::BaseController
+class Api::V1::ServicesController < Api::V1::BaseController
   before_action :find_service, only: [:show, :destroy, :update, :edit]
   skip_before_action :authenticate_user!, only: :index, raise:false
 
