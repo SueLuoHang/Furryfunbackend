@@ -33,6 +33,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
     end
     return user
   end
+
 #   URL = 'https://api.weixin.qq.com/sns/jscode2session'
 #   def login
 #     wx_params = {
