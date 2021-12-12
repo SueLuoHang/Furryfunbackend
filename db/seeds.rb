@@ -5,14 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(
+Service.destroy_all
+User.destroy_all
+user = User.create!(
   user_name: Faker::Name.name,
-  phone_number: Faker::PhoneNumber.phone_number
+  phone_number: Faker::PhoneNumber.phone_number,
+  email: "robinlsh0809@gmail.com",
+  password: "1234567"
 )
 
-Service.create(
+Service.create!(
   title: 'pets care',
   description: 'give you best care',
-  category: 'daily care',
+  category: 'daily_care',
   user: user
 )

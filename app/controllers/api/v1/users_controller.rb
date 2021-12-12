@@ -1,8 +1,6 @@
-class Api::V1::ServicesController < Api::V1::BaseController
-  before_action :authenticate_user!, except: [:create], raise: false
-  skip_before_action :verify_authenticity_token
+class Api::V1::UsersController < Api::V1::BaseController
 
-  def create
+  def login
     user = get_user
 
     if user.blank?
@@ -22,7 +20,8 @@ class Api::V1::ServicesController < Api::V1::BaseController
   def get_user
     mp_openid = fetch_wx_open_id(params[:code])["mp_openid"]
     user = User.find_by(mp_openid: mp_openid)
-    return nil if user.blank?
+    # p "==========", user
+    # return nil if user.blank?
 
     if user.blank?
       user = User.create!(
