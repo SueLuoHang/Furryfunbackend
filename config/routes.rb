@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         resources :bookings, only: [ :show, :create, :destroy ]
       end
       devise_scope :user do
-        post 'login', to: 'user_sessions#create', as: 'login'
+        post 'login', to: 'users#login'
       end
       put 'users/update', to: 'users#update'
 
