@@ -8,8 +8,8 @@
 Service.destroy_all
 User.destroy_all
 user = User.create!(
-  user_name: Faker::Name.name,
-  phone_number: Faker::PhoneNumber.phone_number,
+  user_name: "Sue_sue",
+  phone_number: "1951",
   email: "robinlsh0809@gmail.com",
   password: "1234567"
 )
