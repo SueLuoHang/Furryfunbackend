@@ -1,3 +1,4 @@
-json.services do
-  json.array! @services, :id, :title, :description, :category
+json.modelling_services do
+  # json.array! @modelling_services, :name, :title, :description, :category
+  json.array! @services, :id, :name, :title, :description, :category
 end

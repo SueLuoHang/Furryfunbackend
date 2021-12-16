@@ -26,7 +26,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     if user.blank?
       user = User.create!(
         mp_openid: mp_openid,
-        email: "#{mp_openid.downcase}_#{SercureRandom.hex(3)}@wx.com",
+        email: "#{mp_openid.downcase}_#{SecureRandom.hex(3)}@wx.com",
         password: Devise.friendly_token(20)
       )
     end
