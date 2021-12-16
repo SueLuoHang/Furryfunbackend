@@ -14,9 +14,34 @@ user = User.create!(
   password: "1234567"
 )
 
-Service.create!(
-  title: 'pets care',
-  description: 'give you best care',
-  category: 'daily_care',
-  user: user
-)
+modelling_services = [
+  {
+    name: "Momo",
+    title: 'Many years of professional modelling experience',
+    description: 'Momo is a six year old Golden Retriever who has been modelling since he was one year old and he has been in many commercials and promos.',
+    category: 'modelling'
+  }, {
+    name: 'Kimi',
+    title: 'Popular on Red',
+    description: 'Kimi is an eight-year-old Chinese rural dog who travels a lot with his owner and has many followers on social media, Red.',
+    category: 'modelling'
+  }, {
+    name: 'Feizai',
+    title: 'Enjoying the spotlight',
+    description: 'feizai is a 3 year old British Shorthair who loves having his picture taken and enjoying the spotlight.',
+    category: 'modelling'
+  },
+  {
+    name: 'Gungun',
+    title: 'Charity video experience',
+    description: 'Gungun is a one-and-a-half year old alpaca who was featured in a charity video.',
+    category: 'modelling'
+  }
+]
+
+
+modelling_services.each do |modelling_service|
+  ms = Service.create!(name: modelling_service[:name], title: modelling_service[:title], description: modelling_service[:description], category: modelling_service[:category], user: user)
+  puts "model #{ms.name} created"
+end
+puts "Created #{Service.count} modelling services"
