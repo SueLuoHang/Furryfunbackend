@@ -13,7 +13,10 @@ class Api::V1::UsersController < Api::V1::BaseController
           "X-USER-TOKEN" => user.authentication_token
         }
       }
-    end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
@@ -48,3 +51,4 @@ class Api::V1::UsersController < Api::V1::BaseController
     render json: { status: 'fail', res: 'fail', errors: object.errors.full_messages },
     status: 422
   end
+end
