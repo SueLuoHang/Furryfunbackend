@@ -10,8 +10,14 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def create
-    @service = Service.create(permitted_params)
-    @service.save
+    @service = Service.new(permitted_params)
+    @service.user = current_user
+
+    if @service.save
+      render :show, status: :created
+    else
+      render_error
+    end
   end
 
   def destroy
@@ -32,6 +38,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def permitted_params
-    params.require(:service).permit(:title, :description)
+    params.require(:service).permit(:name, :title, :description)
   end
 end
