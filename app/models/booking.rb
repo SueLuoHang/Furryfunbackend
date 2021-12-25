@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :status, inclusion: { in: %w(complete incomplete) }
+  validates :status
   belongs_to :user
   belongs_to :service
 end
