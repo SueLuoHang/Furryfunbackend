@@ -38,6 +38,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def permitted_params
-    params.require(:service).permit(:name, :title, :description)
+    params.require(:service).permit(:name, :title, :description, photo:[])
   end
 end
