@@ -6,6 +6,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
   def create
     @booking = Booking.new(booking_params)
     @booking.service = @service
+    @booking.user = current_user
     @booking.save
   end
 
