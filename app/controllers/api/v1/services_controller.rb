@@ -11,7 +11,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def create
     @service = Service.new(permitted_params)
-    @service.user = current_user
+    @service.pet = @pet
 
     if @service.save
       render :show, status: :created

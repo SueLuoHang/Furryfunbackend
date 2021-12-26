@@ -6,42 +6,74 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Service.destroy_all
+Pet.destroy_all
 User.destroy_all
-user = User.create!(
+
+puts "all records destroy"
+user = User.create(
   user_name: "Sue_sue",
   phone_number: "1951",
   email: "robinlsh0809@gmail.com",
   password: "1234567"
 )
+puts "user 1 has been created"
+
+pets = [
+  {
+    pet_name: 'Momo',
+    location: 'Shanghai',
+    gender: 'male',
+    description: 'Momo is a six year old Golden Retriever who has been modelling since he was one year old and he has been in many commercials and promos.'
+  }, {
+    pet_name: 'Kimi',
+    location: 'Xi`an',
+    gender: 'female',
+    description: 'Kimi is an eight-year-old Chinese rural dog who travels a lot with his owner and has many followers on social media, Red.'
+  }, {
+    pet_name: 'Feizai',
+    location: 'Beijing',
+    gender: 'female',
+    description: 'feizai is a 3 year old British Shorthair who loves having his picture taken and enjoying the spotlight.'
+  },
+  {
+    pet_name: 'Gungun',
+    location: 'Chengdu',
+    gender: 'female',
+    description: 'Gungun is a one-and-a-half year old alpaca who was featured in a charity video'
+  }
+]
+
+pets.each do |pet|
+  Pet.create!(pet_name: pet[:pet_name], location: pet[:location], description: pet[:description], gender: pet[:gender], user: user)
+  puts "pet created"
+end
+puts "Created #{Pet.count} pets information"
 
 modelling_services = [
   {
-    name: "Momo",
     title: 'Many years of professional modelling experience',
-    description: 'Momo is a six year old Golden Retriever who has been modelling since he was one year old and he has been in many commercials and promos.',
-    category: 'modelling'
+    category: 'modelling',
+    pet_type: 'cat'
   }, {
-    name: 'Kimi',
     title: 'Popular on Red',
-    description: 'Kimi is an eight-year-old Chinese rural dog who travels a lot with his owner and has many followers on social media, Red.',
-    category: 'modelling'
+    category: 'modelling',
+    pet_type: 'dog'
   }, {
-    name: 'Feizai',
     title: 'Enjoying the spotlight',
-    description: 'feizai is a 3 year old British Shorthair who loves having his picture taken and enjoying the spotlight.',
-    category: 'modelling'
+    category: 'modelling',
+    pet_type: 'others'
   },
   {
-    name: 'Gungun',
     title: 'Charity video experience',
-    description: 'Gungun is a one-and-a-half year old alpaca who was featured in a charity video.',
-    category: 'modelling'
+    category: 'modelling',
+    pet_type: 'cat'
   }
 ]
 
 
 modelling_services.each do |modelling_service|
-  ms = Service.create!(name: modelling_service[:name], title: modelling_service[:title], description: modelling_service[:description], category: modelling_service[:category], user: user)
-  puts "model #{ms.name} created"
+  puts "begin to seed service"
+  ms = Service.create(title: modelling_service[:title], pet_type: modelling_service[:pet_type], category: modelling_service[:category], pet: Pet.first)
+  puts "service #{ms.title} created"
 end
 puts "Created #{Service.count} modelling services"
