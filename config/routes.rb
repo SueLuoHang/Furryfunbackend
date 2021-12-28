@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :users, only: [:show]
-        resources :pets
-      end
+      resources :pets
       resources :services do
         resources :bookings, only: [:show, :create, :destroy]
       end
+    end
       devise_scope :user do
         post 'login', to: 'users#login'
       end

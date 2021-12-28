@@ -14,6 +14,10 @@ class Api::V1::BookingsController < Api::V1::BaseController
     @booking.destroy
   end
 
+  def valid?
+
+  end
+
   private
 
   def find_service
