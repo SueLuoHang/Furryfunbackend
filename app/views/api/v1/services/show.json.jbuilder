@@ -1,4 +1,4 @@
-json.modelling_service do
+json.modelling_services do
   json.id @service.id
   json.title @service.title
   json.categoy @service.category

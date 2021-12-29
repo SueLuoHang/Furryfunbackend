@@ -1,5 +1,6 @@
 class Api::V1::BookingsController < Api::V1::BaseController
   before_action :find_service
+  before_action :find_booking
   def show
   end
 
@@ -14,9 +15,15 @@ class Api::V1::BookingsController < Api::V1::BaseController
     @booking.destroy
   end
 
-  def valid?
-
-  end
+  # def valid?
+  #   if @time.include? time_params
+  #     render_error
+  #   else
+  #     @time = Time.new(time_params)
+  #     @time.save
+  #     render :show, status: :completed
+  #   end
+  # end
 
   private
 
@@ -24,8 +31,12 @@ class Api::V1::BookingsController < Api::V1::BaseController
     @service = Service.find(params[:service_id])
   end
 
+  def find_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
-    params.require(:user_id).permit(:service_id)
+    params.require(:booking).permit(:time)
   end
 
 end

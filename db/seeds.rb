@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Service.destroy_all
 Pet.destroy_all
+Booking.destroy_all
 User.destroy_all
 
 puts "all records destroy"
@@ -77,3 +78,25 @@ modelling_services.each do |modelling_service|
   puts "service #{ms.title} created"
 end
 puts "Created #{Service.count} modelling services"
+
+bookings = [
+  {
+    time: "2021-01-08",
+    status: "completed"
+  },{
+    time: "2022-12-31",
+    status: "completed"
+  },{
+    time: "2021-08-09",
+    status: "completed"
+  },{
+    time: "2023-01-01",
+    status: "completed"
+  }
+]
+
+bookings.each do |booking|
+  Booking.create!(time: booking[:time], status: booking[:status], user: user, service: Service.first)
+  puts "booking created"
+end
+puts "Created #{Booking.count} booking information"
