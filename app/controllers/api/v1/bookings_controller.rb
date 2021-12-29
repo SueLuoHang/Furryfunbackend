@@ -4,26 +4,21 @@ class Api::V1::BookingsController < Api::V1::BaseController
   def show
   end
 
+
   def create
-    @booking = Booking.new(booking_params)
-    @booking.service = @service
-    @booking.user = current_user
-    @booking.save
+    if @booking.time.include? time_params
+      render_error
+    else
+      @booking = Booking[time: booking_params, status: completed]
+      @booking.service = @service
+      @booking.user = current_user
+      @booking.save
+    end
   end
 
   def destroy
     @booking.destroy
   end
-
-  # def valid?
-  #   if @time.include? time_params
-  #     render_error
-  #   else
-  #     @time = Time.new(time_params)
-  #     @time.save
-  #     render :show, status: :completed
-  #   end
-  # end
 
   private
 
@@ -36,7 +31,6 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def booking_params
-    params.require(:booking).permit(:time)
+    params.require(:time)
   end
-
 end

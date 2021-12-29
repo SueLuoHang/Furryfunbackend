@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Service.destroy_all
 Pet.destroy_all
-Booking.destroy_all
 User.destroy_all
-
+Booking.destroy_all
 puts "all records destroy"
+
 user = User.create(
   user_name: "Sue_sue",
   phone_number: "1951",
