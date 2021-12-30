@@ -6,10 +6,10 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
 
   def create
-    if @booking.time.include? time_params
+    if @booking.time.include? booking_params
       render_error
     else
-      @booking = Booking[time: booking_params, status: completed]
+      @booking = Booking.new(booking_params)
       @booking.service = @service
       @booking.user = current_user
       @booking.save
@@ -31,6 +31,6 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def booking_params
-    params.require(:time)
+    params.require(:booking).permit(:time, status: completed)
   end
 end

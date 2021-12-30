@@ -1,0 +1,101 @@
+--2021-12-30 19:25:41--  https://git.io/vxhJn
+Resolving git.io (git.io)... 127.0.5.17, 2001::c710:9e08
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:27:29--  (try: 2)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:30:03--  (try: 3)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:32:38--  (try: 4)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:35:17--  (try: 5)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:38:00--  (try: 6)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:40:55--  (try: 7)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:43:54--  (try: 8)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:46:40--  (try: 9)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:49:21--  (try:10)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:52:03--  (try:11)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:54:44--  (try:12)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 19:57:25--  (try:13)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:00:07--  (try:14)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:02:48--  (try:15)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:05:30--  (try:16)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:08:12--  (try:17)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:10:54--  (try:18)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:13:39--  (try:19)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Retrying.
+
+--2021-12-30 20:16:37--  (try:20)  https://git.io/vxhJn
+Connecting to git.io (git.io)|127.0.5.17|:443... failed: Operation timed out.
+Connecting to git.io (git.io)|2001::c710:9e08|:443... failed: Operation timed out.
+Giving up.
+
