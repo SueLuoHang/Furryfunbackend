@@ -9,10 +9,10 @@ Rails.application.routes.draw do
       resources :services do
         resources :bookings, only: [:show, :create, :destroy]
       end
-    end
       devise_scope :user do
         post 'login', to: 'users#login'
       end
       put 'users/update', to: 'users#update'
     end
   end
+end
