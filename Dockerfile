@@ -1,4 +1,4 @@
-FROM ruby:<ruby 2.7.3p183>
+FROM ruby:2.7.3
 
 # Install NodeJS and Yarn
 RUN apt-get update
@@ -14,9 +14,8 @@ COPY Gemfile* /tmp/
 COPY package.json /tmp/
 COPY yarn.lock /tmp/
 WORKDIR /tmp
-RUN gem install bundler -v <Bundler version 2.2.25>
+RUN gem install bundler -v 2.2.25
 RUN bundle install --jobs 5 --retry 5 --without development test
-RUN yarn install # not needed for APIs
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
