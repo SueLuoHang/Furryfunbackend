@@ -1,9 +1,13 @@
 class Api::V1::BookingsController < Api::V1::BaseController
   before_action :find_service
-  before_action :find_booking
+  before_action :find_booking, only: [:show, :destroy], raise: false
+
   def show
   end
 
+  def index
+    @bookings = Booking.all
+  end
 
   def create
     if @booking.time.include? booking_params

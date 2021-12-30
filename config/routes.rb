@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :users, only: [:show]
       resources :pets
       resources :services do
-        resources :bookings, only: [:show, :create, :destroy]
+        resources :bookings
       end
       devise_scope :user do
         post 'login', to: 'users#login'
