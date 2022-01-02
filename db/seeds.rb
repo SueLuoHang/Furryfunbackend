@@ -73,7 +73,7 @@ modelling_services = [
 
 modelling_services.each do |modelling_service|
   puts "begin to seed service"
-  Service.create(category: modelling_service[:category], pet:Pet.first)
+  Service.create(category: modelling_service[:category], pet: Pet.first)
   puts "service created"
 end
 puts "Created #{Service.count} modelling services"
@@ -95,7 +95,7 @@ bookings = [
 ]
 
 bookings.each do |booking|
-  Booking.create!(time: booking[:time], status: booking[:status], user: user, service: Service.first)
+  Booking.create!(time: booking[:time], status: booking[:status], user: user, pet: Pet.first)
   puts "booking created"
 end
 puts "Created #{Booking.count} booking information"
