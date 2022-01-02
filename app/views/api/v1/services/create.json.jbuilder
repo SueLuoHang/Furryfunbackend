@@ -1,3 +1,3 @@
 json.services do
-  json.(@services, :id, :title, :category, :pet_type)
+  json.(@services, :id, :category, :pet_id)
 end

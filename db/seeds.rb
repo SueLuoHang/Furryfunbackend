@@ -22,60 +22,58 @@ puts "user 1 has been created"
 pets = [
   {
     pet_name: 'Momo',
+    pet_type: 'dog',
     location: 'Shanghai',
     gender: 'male',
+    title: 'Many years of professional modelling experience',
     description: 'Momo is a six year old Golden Retriever who has been modelling since he was one year old and he has been in many commercials and promos.'
   }, {
     pet_name: 'Kimi',
+    pet_type: 'dog',
     location: 'Xi`an',
     gender: 'female',
+    title: 'Popular on Red',
     description: 'Kimi is an eight-year-old Chinese rural dog who travels a lot with his owner and has many followers on social media, Red.'
   }, {
     pet_name: 'Feizai',
+    pet_type: 'cat',
     location: 'Beijing',
     gender: 'female',
+    title: 'Enjoying the spotlight',
     description: 'feizai is a 3 year old British Shorthair who loves having his picture taken and enjoying the spotlight.'
   },
   {
     pet_name: 'Gungun',
+    pet_type: 'others',
     location: 'Chengdu',
     gender: 'female',
+    title: 'Charity video experience',
     description: 'Gungun is a one-and-a-half year old alpaca who was featured in a charity video'
   }
 ]
 
 pets.each do |pet|
-  Pet.create!(pet_name: pet[:pet_name], location: pet[:location], description: pet[:description], gender: pet[:gender], user: user)
+  Pet.create!(pet_name: pet[:pet_name], pet_type: pet[:pet_type], location: pet[:location], title: pet[:title], description: pet[:description], gender: pet[:gender], user: user)
   puts "pet created"
 end
 puts "Created #{Pet.count} pets information"
 
 modelling_services = [
   {
-    title: 'Many years of professional modelling experience',
-    category: 'modelling',
-    pet_type: 'cat'
+    category: 'modelling'
   }, {
-    title: 'Popular on Red',
-    category: 'modelling',
-    pet_type: 'dog'
+    category: 'modelling'
   }, {
-    title: 'Enjoying the spotlight',
-    category: 'modelling',
-    pet_type: 'others'
-  },
-  {
-    title: 'Charity video experience',
-    category: 'modelling',
-    pet_type: 'cat'
+    category: 'modelling'
+  }, {
+    category: 'modelling'
   }
 ]
 
-
 modelling_services.each do |modelling_service|
   puts "begin to seed service"
-  ms = Service.create(title: modelling_service[:title], pet_type: modelling_service[:pet_type], category: modelling_service[:category], pet: Pet.first)
-  puts "service #{ms.title} created"
+  Service.create(category: modelling_service[:category], pet: Pet.first)
+  puts "service created"
 end
 puts "Created #{Service.count} modelling services"
 
@@ -83,13 +81,13 @@ bookings = [
   {
     time: "2021-01-08",
     status: "completed"
-  },{
+  }, {
     time: "2022-12-31",
     status: "completed"
-  },{
+  }, {
     time: "2021-08-09",
     status: "completed"
-  },{
+  }, {
     time: "2023-01-01",
     status: "completed"
   }

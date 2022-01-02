@@ -1,3 +1,3 @@
 json.pets do
-  json.(@pets, :id, :pet_name, :location, :description, :gender, :photos)
+  json.(@pets, :id, :pet_type, :pet_name, :location, :title, :description, :gender, :photos)
 end

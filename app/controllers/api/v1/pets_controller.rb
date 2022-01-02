@@ -39,6 +39,6 @@ class Api::V1::PetsController < Api::V1::BaseController
   end
 
   def permitted_params
-    params.require(:pet).permit(:pet_name, :location, :description, :gender, photo:[])
+    params.require(:pet).permit(:pet_name, :pet_type, :location, :title, :description, :gender, photo:[])
   end
 end
