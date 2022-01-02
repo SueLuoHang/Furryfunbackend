@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Booking.destroy_all
 Service.destroy_all
 Pet.destroy_all
 User.destroy_all
-Booking.destroy_all
 puts "all records destroy"
 
 user = User.create(
@@ -72,7 +73,7 @@ modelling_services = [
 
 modelling_services.each do |modelling_service|
   puts "begin to seed service"
-  Service.create(category: modelling_service[:category], pet: Pet.first)
+  Service.create(category: modelling_service[:category], pet:Pet.first)
   puts "service created"
 end
 puts "Created #{Service.count} modelling services"
