@@ -1,9 +1,10 @@
 class Api::V1::PetsController < Api::V1::BaseController
-  before_action :find_pet
+  before_action :find_pet, only: [:show, :destroy, :edit]
   skip_before_action :authenticate_user!, only: [:index], raise: false
 
   def index
     @pets = Pet.all
+    @services = Service.all
   end
 
   def show
