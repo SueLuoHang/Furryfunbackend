@@ -1,5 +1,5 @@
 class Api::V1::BookingsController < Api::V1::BaseController
-  before_action :find_service
+  before_action :find_pet
   before_action :find_booking, only: [:show, :destroy], raise: false
 
   def show
@@ -26,8 +26,8 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
   private
 
-  def find_service
-    @service = Service.find(params[:service_id])
+  def find_pet
+    @pet = Pet.find(params[:service_id])
   end
 
   def find_booking
