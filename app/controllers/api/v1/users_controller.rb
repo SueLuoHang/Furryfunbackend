@@ -19,7 +19,20 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = current_user
+    if @user.update!(user_params)
+      render json: @user
+    else
+      render_success(message: "User not saved!")
+    end
+  end
+
   private
+  def user_params
+    params.require(:user).permit(:user_name, :phone_number)
+  end
+
   def get_user
     mp_openid = fetch_wx_open_id(params[:code])["openid"]
     # p "================", mp_openid
