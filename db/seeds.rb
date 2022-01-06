@@ -106,7 +106,7 @@ bookings = [
 ]
 
 bookings.each do |booking|
-  Booking.create!(time: booking[:time], status: booking[:status], user: user, service: Service.first)
+  Booking.create!(time: booking[:time], status: booking[:status], user: user, pet: Pet.first)
   puts "booking created"
 end
 puts "Created #{Booking.count} booking information"

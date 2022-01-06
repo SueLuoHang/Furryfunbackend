@@ -1,5 +1,5 @@
 class Api::V1::BookingsController < Api::V1::BaseController
-  before_action :find_service
+  before_action :find_pet, only: [:show], raise: false
   before_action :find_booking, only: [:show, :destroy], raise: false
 
   def show
@@ -14,7 +14,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
       render_error
     else
       @booking = Booking.new(booking_params)
-      @booking.service = @service
+      @booking.pet_id = pet_id
       @booking.user = current_user
       @booking.save
     end
@@ -26,8 +26,8 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
   private
 
-  def find_service
-    @service = Service.find(params[:service_id])
+  def find_pet
+    @pet = Pet.find(params[:pet_id])
   end
 
   def find_booking

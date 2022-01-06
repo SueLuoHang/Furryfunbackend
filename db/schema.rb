@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 2022_01_06_114731) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "service_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "time"
     t.string "status"
-    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.bigint "pet_id"
+    t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_114731) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users"
   add_foreign_key "pets", "users"
   add_foreign_key "services", "pets"
