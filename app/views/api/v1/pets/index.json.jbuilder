@@ -1,5 +1,5 @@
 json.pets do
-  json.array! @pets, :id, :pet_name, :pet_type, :location, :title, :description, :gender, :photos
+  json.array! @pets, :id, :pet_name, :pet_type, :location, :title, :description, :gender, :photo
 end
 
 json.services do
