@@ -3,7 +3,7 @@ class Api::V1::BaseController < ActionController::Base
   rescue_from StandardError,                with: :internal_server_error
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   skip_before_action :verify_authenticity_token
-  acts_as_token_authentication_handler_for User, except: [ :login, :index, :show ]
+  acts_as_token_authentication_handler_for User, except: [ :login, :index, :show, :update ]
   private
 
   def not_found(exception)
