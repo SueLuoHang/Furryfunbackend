@@ -18,7 +18,6 @@ user = User.create(
   user_name: "Sue_sue",
   phone_number: "1951",
   email: "robinlsh0809@gmail.com",
-  password: "1234567"
 )
 puts "user 1 has been created"
 
