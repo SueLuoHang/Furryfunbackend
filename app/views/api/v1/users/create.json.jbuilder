@@ -1,2 +1,0 @@
-json.users do
-end

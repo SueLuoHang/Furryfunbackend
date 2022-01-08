@@ -26,7 +26,6 @@ gem 'activestorage-aliyun'
 gem 'image_processing'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'simple_token_authentication', '~> 1.0'
