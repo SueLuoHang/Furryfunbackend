@@ -10,13 +10,32 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def create
-    if @booking.time.include? booking_params
-      render_error
+    booking_time = params[:booking]
+    time = booking_time[:time]
+    pet_id = booking_time[:pet_id]
+    p "======123====="
+    p time
+    p "=======finish====="
+    p pet_id
+    current_user = User.find(params[:user_id])
+
+    @bookings = Booking.all
+    p @bookings
+    bookings_time = []
+    @bookings.each do |booking|
+      bookings_time << booking.time
+    end
+
+    if bookings_time.include? time
+      render json: {
+        message: "this time has already booked"
+      }
+
     else
       @booking = Booking.new(booking_params)
-      @booking.pet_id = pet_id
       @booking.user = current_user
-      @booking.save
+      @booking.pet_id = pet_id
+      @booking.save!
     end
   end
 
@@ -35,6 +54,6 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def booking_params
-    params.require(:booking).permit(:time, status: completed)
+    params.require(:booking).permit(:time, :pet_id, :user_id)
   end
 end
