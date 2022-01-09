@@ -1,3 +1,5 @@
 json.bookings do
-  json.(@bookings, :id, :status, :time)
+  json.array! @bookings do |booking|
+    json.extract! booking, :id, :time
+  end
 end
