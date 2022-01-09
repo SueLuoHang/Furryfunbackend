@@ -17,7 +17,6 @@ puts "all records destroy"
 user = User.create(
   user_name: "Sue_sue",
   phone_number: "1951",
-  email: "robinlsh0809@gmail.com",
 )
 puts "user 1 has been created"
 
