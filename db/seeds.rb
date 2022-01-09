@@ -16,8 +16,7 @@ puts "all records destroy"
 
 user = User.create(
   user_name: "Sue_sue",
-  phone_number: "1951",
-  email: "robinlsh0809@gmail.com",
+  phone_number: "1951"
 )
 puts "user 1 has been created"
 
@@ -29,7 +28,7 @@ pets = [
     gender: 'male',
     title: 'Many years of professional modelling experience',
     description: 'Momo is a six year old Golden Retriever who has been modelling since he was one year old and he has been in many commercials and promos.',
-    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Golden-retriever.jpg?Expires=1641474208&OSSAccessKeyId=TMP.3KeEv95ZMZYhpa8HVCjfb3YFbpMC2jedfJFsZnnpe19aWYiLg2HLUHJrgsaJLVoALG18tBJSZPPr5BXrvJhEcNf7rHhmBx&Signature=taXwWB11uPXDiJgfIRGGOeLk%2BIQ%3D&versionId=CAEQLBiBgIDJ8OW68RciIDc5MGYxNTg0NWQ5NTRiMjU5ZjRhZTIwNmJkMzAyYjA4&response-content-type=application%2Foctet-stream'
+    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Golden-retriever.jpg?versionId=CAEQLBiBgIDJ8OW68RciIDc5MGYxNTg0NWQ5NTRiMjU5ZjRhZTIwNmJkMzAyYjA4'
   }, {
     pet_name: 'Kimi',
     pet_type: 'dog',
@@ -37,7 +36,7 @@ pets = [
     gender: 'female',
     title: 'Popular on Red',
     description: 'Kimi is an eight-year-old Chinese rural dog who travels a lot with his owner and has many followers on social media, Red.',
-    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Chinese-rural-dog.jpg?Expires=1641474233&OSSAccessKeyId=TMP.3KeEv95ZMZYhpa8HVCjfb3YFbpMC2jedfJFsZnnpe19aWYiLg2HLUHJrgsaJLVoALG18tBJSZPPr5BXrvJhEcNf7rHhmBx&Signature=CMR6DOKptN9bWYJ6PJvJbLzORuQ%3D&versionId=CAEQLBiBgIDe8OW68RciIDFhYTk1MWE1MGUyMTQyYzViOTllNTc5OTI1MzBmNjg1&response-content-type=application%2Foctet-stream'
+    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Chinese-rural-dog.jpg?versionId=CAEQLBiBgIDe8OW68RciIDFhYTk1MWE1MGUyMTQyYzViOTllNTc5OTI1MzBmNjg1'
   }, {
     pet_name: 'Feizai',
     pet_type: 'cat',
@@ -45,7 +44,7 @@ pets = [
     gender: 'female',
     title: 'Enjoying the spotlight',
     description: 'feizai is a 3 year old British Shorthair who loves having his picture taken and enjoying the spotlight.',
-    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/British-shorthair.jpg?Expires=1641474258&OSSAccessKeyId=TMP.3KeEv95ZMZYhpa8HVCjfb3YFbpMC2jedfJFsZnnpe19aWYiLg2HLUHJrgsaJLVoALG18tBJSZPPr5BXrvJhEcNf7rHhmBx&Signature=7NmYQ9wr%2BOW7SXAlqAfGbx9dBYg%3D&versionId=CAEQLBiBgICR8OW68RciIDhhMWJkNmJjOTAyMDQyYzJhZTg3MWUxZGEyMTZjYjll&response-content-type=application%2Foctet-stream'
+    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/British-shorthair.jpg?versionId=CAEQLBiBgICR8OW68RciIDhhMWJkNmJjOTAyMDQyYzJhZTg3MWUxZGEyMTZjYjll'
   },
   {
     pet_name: 'Gungun',
@@ -54,7 +53,7 @@ pets = [
     gender: 'female',
     title: 'Charity video experience',
     description: 'Gungun is a one-and-a-half year old alpaca who was featured in a charity video',
-    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Alpaca.jpg?Expires=1641474274&OSSAccessKeyId=TMP.3KeEv95ZMZYhpa8HVCjfb3YFbpMC2jedfJFsZnnpe19aWYiLg2HLUHJrgsaJLVoALG18tBJSZPPr5BXrvJhEcNf7rHhmBx&Signature=mSYyT5EWtv2goqkFC%2F0CY%2FJWq9A%3D&versionId=CAEQLBiBgMDV8uW68RciIGZmMjg2NzJiNmMyYzRhODM5YzkzYTM3ZmJlZjdlZTkw&response-content-type=application%2Foctet-stream'
+    file: 'https://furryfun.oss-cn-shanghai.aliyuncs.com/Alpaca.jpg?versionId=CAEQLBiBgMDV8uW68RciIGZmMjg2NzJiNmMyYzRhODM5YzkzYTM3ZmJlZjdlZTkw'
   }
 ]
 
