@@ -7,6 +7,6 @@ json.pets do
   json.title @pet.title
   json.description @pet.description
   json.gender @pet.gender
-  json.photo @pet.photo
   json.date @pet.created_at.strftime("%A, %d %b %Y %l:%M %p")
+  json.url @pet.photo.service_url
 end
