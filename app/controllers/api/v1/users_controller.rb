@@ -27,15 +27,24 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def update
+    # @user.update(permitted_params)
     p "========123======"
     p @user
     p "================="
-    user_info = params[:userInfo]
-    @user.user_name = user_info[:nickName]
-    @user.gender = user_info[:gender].to_s
-    @user.avatar = user_info[:avatarUrl]
-    @user.save!
-    render json: { currentUser: @user }
+    if params[:userInfo]
+      user_info = params[:userInfo]
+      @user.user_name = user_info[:nickName]
+      @user.gender = user_info[:gender].to_s
+      @user.avatar = user_info[:avatarUrl]
+      @user.save!
+      render json: { currentUser: @user }
+   else
+      user_info = params[:user]
+      p user_info[:phone_number]
+      @user.phone_number = user_info[:phone_number].to_i
+      @user.save!
+      render json: { currentUser: @user }
+   end
   end
 
   private
