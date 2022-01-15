@@ -4,9 +4,3 @@ json.pets do
     json.url pet.photo.service_url
   end
 end
-
-json.services do
-  json.array! @services do |service|
-    json.pet_id service.pet_id
-  end
-end
