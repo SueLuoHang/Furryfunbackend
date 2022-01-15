@@ -12,6 +12,7 @@ class Api::V1::PetsController < Api::V1::BaseController
 
   def create
     @pet = Pet.new(permitted_params)
+    current_user = User.find(params[:user_id])
     @pet.user = current_user
 
     if @pet.save
