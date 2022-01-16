@@ -1,5 +1,5 @@
 class Api::V1::PetsController < Api::V1::BaseController
-  before_action :find_pet, only: [:show, :destroy, :edit, :update_photo]
+  before_action :find_pet, only: [:show, :destroy, :edit, :update, :update_photo]
   skip_before_action :authenticate_user!, only: [:index], raise: false
 
   def index
