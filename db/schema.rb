@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_012534) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "mp_openid"
+    t.string "avatar"
     t.string "gender"
   end
 
