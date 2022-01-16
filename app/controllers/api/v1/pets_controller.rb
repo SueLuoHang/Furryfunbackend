@@ -1,5 +1,5 @@
 class Api::V1::PetsController < Api::V1::BaseController
-  before_action :find_pet, only: [:show, :destroy, :edit, :update]
+  before_action :find_pet, only: [:show, :destroy, :edit, :update_photo]
   skip_before_action :authenticate_user!, only: [:index], raise: false
 
   def index
@@ -12,13 +12,13 @@ class Api::V1::PetsController < Api::V1::BaseController
 
   def create
     @pet = Pet.new(permitted_params)
-    current_user = User.find(permitted_params[:user_id])
+    current_user = User.find(params[:user_id])
     @pet.user = current_user
 
     if @pet.save
-      render :show, status: :created
+      render :create, status: :created
     else
-      render_error
+      render json: {status: 500, msg: "Pet Created Fail!"}
     end
   end
 
@@ -43,6 +43,17 @@ class Api::V1::PetsController < Api::V1::BaseController
     @pet.title = pet_info[:title]
     @pet.save!
   end
+
+  def update_photo
+    puts params
+    puts "======================================"
+    photo = params[:petPhoto]
+    @pet.photo.attach(photo)
+    render json: {status: 200, msg: "Photo attached"} if @pet.save
+    puts "---------------ERROR-----------------"
+  end
+
+
 
   private
 

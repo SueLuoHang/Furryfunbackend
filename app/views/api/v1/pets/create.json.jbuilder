@@ -1,3 +1,3 @@
-json.pets do
-  json.(@pets, :id, :pet_type, :pet_name, :location, :title, :description, :gender, :photo)
+json.pet do
+  json.extract! @pet, :id
 end
