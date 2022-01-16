@@ -12,7 +12,7 @@ class Api::V1::PetsController < Api::V1::BaseController
 
   def create
     @pet = Pet.new(permitted_params)
-    current_user = User.find(params[:user_id])
+    current_user = User.find(permitted_params[:user_id])
     @pet.user = current_user
 
     if @pet.save
@@ -50,12 +50,9 @@ class Api::V1::PetsController < Api::V1::BaseController
     @pet = Pet.find(params[:id])
   end
 
-  # def permitted_params
-  #   params.require(:pet).permit(:location[], :pet_name, :category, :pet_type, :title, :description, :gender, photo:[])
-  # end
-
   def render_error
     render json: { errors: @pet.errors.full_messages },
       status: :unprocessable_entity
+
   end
 end
