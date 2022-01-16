@@ -8,9 +8,12 @@ Rails.application.routes.draw do
         resources :pets, only: [:create, :update, :delete]
         resources :bookings, shallow: true
       end
-      resources :pets, only:[:index, :show]
-      post '/update_photo', to: 'pets#update_photo'
-      post '/login', to: 'users#login'
+      resources :pets, only:[:index, :show] do
+        member do
+          post '/update_photo', to: 'pets#update_photo'
+        end
+      end
+        post '/login', to: 'users#login'
       resources :services
     end
   end
