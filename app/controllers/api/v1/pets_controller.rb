@@ -1,5 +1,5 @@
 class Api::V1::PetsController < Api::V1::BaseController
-  before_action :find_pet, only: [:show, :destroy, :edit]
+  before_action :find_pet, only: [:show, :destroy, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index], raise: false
 
   def index
@@ -30,7 +30,18 @@ class Api::V1::PetsController < Api::V1::BaseController
   end
 
   def update
-    @pet.update(params[:pet])
+    p @pet
+    puts "=======update======"
+    params.require(:pet).permit!
+    pet_info = params[:pet]
+    p pet_info
+    @pet.pet_name = pet_info[:pet_name]
+    @pet.description = pet_info[:description]
+    @pet.gender = pet_info[:gender]
+    @pet.location = pet_info[:location[]]
+    @pet.pet_type = pet_info[:pet_type]
+    @pet.title = pet_info[:title]
+    @pet.save!
   end
 
   private
@@ -39,7 +50,9 @@ class Api::V1::PetsController < Api::V1::BaseController
     @pet = Pet.find(params[:id])
   end
 
-  def permitted_params
-    params.require(:pet).permit(:user_id, :pet_name, :pet_type, :location, :title, :description, :gender, photo:[])
+  def render_error
+    render json: { errors: @pet.errors.full_messages },
+      status: :unprocessable_entity
+
   end
 end
