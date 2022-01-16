@@ -12,7 +12,7 @@ class Api::V1::PetsController < Api::V1::BaseController
 
   def create
     @pet = Pet.new(permitted_params)
-    current_user = User.find(params[:user_id])
+    current_user = User.find(permitted_params[:user_id])
     @pet.user = current_user
 
     if @pet.save
@@ -40,6 +40,6 @@ class Api::V1::PetsController < Api::V1::BaseController
   end
 
   def permitted_params
-    params.require(:pet).permit(:pet_name, :pet_type, :location, :title, :description, :gender, photo:[])
+    params.require(:pet).permit(:user_id, :pet_name, :pet_type, :location, :title, :description, :gender, photo:[])
   end
 end
