@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'faker'
 gem 'activestorage-aliyun'
 gem 'image_processing'
+gem 'rails-dom-testing'
+gem 'loofah'
+gem 'actiontext'
+gem 'aliyun-sdk'
+gem 'xpath'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
